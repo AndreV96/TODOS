@@ -2,14 +2,14 @@ const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
-const TODOSAPI = require('./datasources/track-api');
+const TODOSAPI = require('./datasources/todos-api');
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => {
     return {
-      trackAPI: new TODOSAPI(),
+      TODOSAPI: new TODOSAPI(),
     };
   },
 });
